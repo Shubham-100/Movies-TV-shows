@@ -5,7 +5,6 @@ import  {Routes,Route} from 'react-router-dom';
 // import other react and material ui based libs
 import React from "react";
 import Trending from './Components/Trending/Trending.js';
-import MediaCard from './Components/Trending/Trending.js';
 
 function App() {
   return (
