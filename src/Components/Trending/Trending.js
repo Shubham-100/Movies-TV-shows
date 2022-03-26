@@ -22,7 +22,7 @@ export default function Trending() {
       <div className='trending'>
         {
           trendingData && trendingData.map((movie)=>(
-          <MovieCard key={movie.id} title={movie.name || movie.title} date={movie.first_air_date} vote={movie.vote_average} image={movie.poster_path}/>
+          <MovieCard key={movie.id} title={movie.name || movie.title} media={movie.media_type} date={movie.first_air_date || movie.release_date} vote={movie.vote_average} image={movie.poster_path}/>
           ))
         }
       </div>

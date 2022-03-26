@@ -1,0 +1,16 @@
+.content {
+    text-align: center;
+}
+
+.poster {
+    display: flex;
+    border-radius: 20px;
+    padding: 5px;
+    float: left;
+} 
+
+.poster:hover {
+    cursor: pointer;
+    background-color: blue;
+}
+

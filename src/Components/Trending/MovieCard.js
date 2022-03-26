@@ -1,12 +1,17 @@
 import React from 'react';
 import {img_300} from './config.js';
 import {unavailable} from './config.js';
+import './MovieCard.css';
 
-function MovieCard({title, date, vote, image}) {
+function MovieCard({title, media, date, vote, image}) {
   return (
       <React.Fragment>
-        <div>{title}</div>
-        <img src={`${img_300}/${image}`} alt={`${unavailable}`}/>
+          <div className='content'>
+            <img src={image ? `${img_300}/${image}` : unavailable} alt="" className="poster"/>
+            {/* <b className='title'>{title}</b>
+            <span className='details'>{date}</span>
+            <span className='details'>{media === "tv" ? "Web Series" : "Movie"}</span> */}
+          </div>
       </React.Fragment>
   )
 }
