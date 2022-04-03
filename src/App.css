@@ -1,11 +1,13 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Hubballi', cursive;
+    font-family: "Montserrat",sans-serif;
     scroll-behavior: smooth;
+    color: black;
+    font-weight: bold;
 }
 
-.trending{
+.trending {
     margin-top:4.5rem;
     margin-left: 10px;
     display: flex;
@@ -13,32 +15,5 @@
 
 .page {
     text-align: center;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     position: fixed;
 }

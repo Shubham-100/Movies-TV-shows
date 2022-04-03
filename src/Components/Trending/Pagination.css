@@ -1,6 +1,5 @@
-.pagination {
+.page {
     display: flex;
-    float: left;
-    padding: 10rem;
-    margin: 10rem;
+    justify-content: center;
+    text-align: center;
 }

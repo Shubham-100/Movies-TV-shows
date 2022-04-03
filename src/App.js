@@ -40,10 +40,10 @@ function App() {
         {/* // Pagination component */}
         <div className='page'> 
             <Stack spacing={2}>
-                <Pagination count={10} page={page} onChange={changePage} className="pagination"/>
+                <Pagination count={20} page={page} color="secondary" variant="outlined" shape="round" size="medium" onChange={changePage} showFirstButton showLastButton showclassName="pagination" />
             </Stack>
         </div>
-        {/* <div className='foot'><SimpleBottomNavigation/></div> */}
+        { <div className='foot'><SimpleBottomNavigation/></div> }
       </div>
       
     </React.Fragment>
