@@ -1,0 +1,6 @@
+.pagination {
+    display: flex;
+    float: left;
+    padding: 10rem;
+    margin: 10rem;
+}

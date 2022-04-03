@@ -10,7 +10,7 @@ export default function Trending() {
   }, []);
 
   const getTrending = async () => {
-    const api = await fetch("https://api.themoviedb.org/3/trending/movies/day?api_key=2152a5d77cf288227bc1af054e424936&page=1");
+    const api = await fetch("https://api.themoviedb.org/3/trending/all/day?api_key=2152a5d77cf288227bc1af054e424936&page=1");
     const data = await api.json();
     setTrendingData(data.results);
     console.log(data.results);
