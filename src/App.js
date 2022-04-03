@@ -1,25 +1,51 @@
-// import selfmade componenets here
 import Header from './Components/Header/Header.js';
 import SimpleBottomNavigation from './Components/Footer/Footer.js';
 import Trending from './Components/Trending/Trending.js';
 import  {Routes,Route} from 'react-router-dom';
-import PaginationOutlined from './Components/Trending/Pagination.js';
-// import other react and material ui based libs
 import React from "react";
+import {useState, useEffect} from 'react';
+import Typography from '@mui/material/Typography';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 function App() {
+  const [trendingData, setTrendingData] = useState([]);
+  const [page, setPage] = useState(1);
+
+  useEffect(()=>{
+    getTrending(page);
+  }, [page]);
+
+  const getTrending = async (page) => {
+    const api = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=2152a5d77cf288227bc1af054e424936&page=${page}`);
+    const data = await api.json();
+    setTrendingData(data.results);
+    console.log(data.results);
+  };
+
+  const changePage = (event, value) => {
+    setPage(value);
+    window.scroll(0, 0);
+  };
+
   return (
     <React.Fragment>
       <div className="app">
         <div className='head'><Header/></div>
         <div className='cont'>
             <Routes>
-            { <Route path='/' element={<Trending/>}></Route>}
+            { <Route path='/' element={<Trending tdata = {trendingData}/>}></Route>}
             {/* { <Route path='/series' element={}></Route>} */}
             </Routes>
         </div>  
-        <div className='page'><PaginationOutlined/></div>
-        <div className='foot'><SimpleBottomNavigation/></div>
+        {/* // Pagination component */}
+        <div className='page'> 
+            <Stack spacing={2}>
+                <Typography>Page: {page}</Typography>
+                <Pagination count={10} page={page} onChange={changePage} className="pagination"/>
+            </Stack>
+        </div>
+        {/* <div className='foot'><SimpleBottomNavigation/></div> */}
       </div>
       
     </React.Fragment>
