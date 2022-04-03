@@ -3,7 +3,7 @@ import {makeStyles} from '@mui/styles';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import WhatshotIcon from '@mui/icons-material/Whatshot';
 import SearchIcon from '@mui/icons-material/Search';
 
 import React from 'react'
@@ -53,8 +53,8 @@ export default function SimpleBottomNavigation() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Trending" icon={<TrendingUpIcon />} />
-        <BottomNavigationAction label="Search" icon={<SearchIcon />} />
+        <BottomNavigationAction label="Trending" icon={<WhatshotIcon fontSize="large" />} />
+        <BottomNavigationAction label="Search" icon={<SearchIcon fontSize="large"/>} />
       </BottomNavigation>
     </Box>
   );

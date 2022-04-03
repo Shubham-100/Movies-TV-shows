@@ -34,13 +34,13 @@ function App() {
         <div className='cont'>
             <Routes>
             { <Route path='/' element={<Trending tdata = {trendingData}/>}></Route>}
-            {/* { <Route path='/series' element={}></Route>} */}
+            {/* { <Route path='/search' element={}></Route>} */}
             </Routes>
         </div>  
         {/* // Pagination component */}
         <div className='page'> 
             <Stack spacing={2}>
-                <Pagination count={20} page={page} color="secondary" variant="outlined" shape="round" size="medium" onChange={changePage} showFirstButton showLastButton showclassName="pagination" />
+                <Pagination count={20} page={page} color="secondary" variant="outlined"  size="medium" onChange={changePage} showFirstButton showLastButton showclassName="pagination" />
             </Stack>
         </div>
         { <div className='foot'><SimpleBottomNavigation/></div> }
