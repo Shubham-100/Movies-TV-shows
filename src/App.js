@@ -4,7 +4,6 @@ import Trending from './Components/Trending/Trending.js';
 import  {Routes,Route} from 'react-router-dom';
 import React from "react";
 import {useState, useEffect} from 'react';
-import Typography from '@mui/material/Typography';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
@@ -41,7 +40,6 @@ function App() {
         {/* // Pagination component */}
         <div className='page'> 
             <Stack spacing={2}>
-                <Typography>Page: {page}</Typography>
                 <Pagination count={10} page={page} onChange={changePage} className="pagination"/>
             </Stack>
         </div>
