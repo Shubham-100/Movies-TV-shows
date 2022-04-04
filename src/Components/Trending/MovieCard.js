@@ -4,7 +4,7 @@ import {unavailableLandscape} from './config.js';
 import './MovieCard.css';
 import Stack from '@mui/material/Stack';
 import Badge from '@mui/material/Badge';
-import Modal from './Modal.js';
+import ContentModal from './Modal.js';
 
 function MovieCard({title, media, date, vote, image, overview}) {
   
@@ -17,7 +17,7 @@ function MovieCard({title, media, date, vote, image, overview}) {
   return (
       <React.Fragment>
 
-        { modal && <Modal title={title} img={image} overview={overview}/>}
+        { modal && <ContentModal title={title} img={image} overview={overview} open={modal}/>}
 
           <div className='content'>
             <img src={image ? `${img_300}/${image}` : unavailableLandscape} alt="" className="poster" onClick={toggleModal}/>
