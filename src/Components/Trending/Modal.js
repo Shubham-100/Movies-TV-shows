@@ -11,21 +11,22 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
+  width: '70%',
+  height: '70%',
+  bgcolor: '#39445a',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
 };
 
-export default function ContentModal({title, image, overview, modal}) {
+export default function ContentModal({title, img, overview, modal}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  console.log(img);
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button onClick={handleOpen}>More Info?</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -39,12 +40,13 @@ export default function ContentModal({title, image, overview, modal}) {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
+            <Typography color='white' id="transition-modal-title" variant="h4" component="h1">
               {title}
             </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+            <Typography color='white' id="transition-modal-description" sx={{ mt: 2 }}>
               {overview}
             </Typography>
+            <Typography component="h6">Hello</Typography>
           </Box>
         </Fade>
       </Modal>

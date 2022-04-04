@@ -17,7 +17,7 @@ function MovieCard({title, media, date, vote, image, overview}) {
   return (
       <React.Fragment>
 
-        { modal && <ContentModal title={title} img={image} overview={overview} open={modal}/>}
+        { modal && <ContentModal title={title} img={image} overview={overview} open={modal}/> }
 
           <div className='content'>
             <img src={image ? `${img_300}/${image}` : unavailableLandscape} alt="" className="poster" onClick={toggleModal}/>
@@ -31,7 +31,6 @@ function MovieCard({title, media, date, vote, image, overview}) {
           <Stack spacing={3} direction="column">
             {vote > 6  ? <Badge color="success" overlap="circular" badgeContent={vote} fontSize="large"></Badge> : <Badge color="error" overlap="circular" badgeContent={vote} fontSize="large"></Badge>}
           </Stack>
-
       </React.Fragment>
   )
 }

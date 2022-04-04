@@ -6,6 +6,7 @@ import React from "react";
 import {useState, useEffect} from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import CustomizedInputBase from './Components/Trending/Search.js';
 
 function App() {
   const [trendingData, setTrendingData] = useState([]);
@@ -33,8 +34,8 @@ function App() {
         <div className='head'><Header/></div>
         <div className='cont'>
             <Routes>
-            { <Route path='/' element={<Trending tdata = {trendingData}/>}></Route>}
-            {/* { <Route path='/search' element={}></Route>} */}
+             <Route path='/' element={<Trending tdata = {trendingData}/>}></Route>
+             <Route path='/search' element={<CustomizedInputBase/>}></Route>
             </Routes>
         </div>  
         {/* // Pagination component */}
