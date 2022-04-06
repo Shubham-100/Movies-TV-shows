@@ -1,12 +1,12 @@
 import Header from './Components/Header/Header.js';
 import SimpleBottomNavigation from './Components/Footer/Footer.js';
 import Trending from './Components/Trending/Trending.js';
-import  {Routes,Route} from 'react-router-dom';
+import  {Routes, Route} from 'react-router-dom';
 import React from "react";
 import {useState, useEffect} from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import CustomizedInputBase from './Components/Trending/Search.js';
+import Search from './Components/Trending/Search.js';
 
 function App() {
   const [trendingData, setTrendingData] = useState([]);
@@ -35,16 +35,15 @@ function App() {
         <div className='cont'>
             <Routes>
              <Route path='/' element={<Trending tdata = {trendingData}/>}></Route>
-             <Route path='/search' element={<CustomizedInputBase/>}></Route>
+             <Route path='/search' element={<Search/>}></Route>
             </Routes>
         </div>  
-        {/* // Pagination component */}
         <div className='page'> 
             <Stack spacing={2}>
                 <Pagination count={20} page={page} color="secondary" variant="outlined"  size="medium" onChange={changePage} showFirstButton showLastButton showclassName="pagination" />
             </Stack>
         </div>
-        { <div className='foot'><SimpleBottomNavigation/></div> }
+        <div className='foot'><SimpleBottomNavigation/></div> 
       </div>
       
     </React.Fragment>

@@ -5,25 +5,26 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {img_300} from './config.js';
 
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '70%',
-  height: '70%',
+  width: '75%',
+  height: '75%',
   bgcolor: '#39445a',
   border: '2px solid #000',
-  boxShadow: 24,
+  boxShadow: 48,
   p: 4,
+  textAlign: 'justify',
 };
 
-export default function ContentModal({title, img, overview, modal}) {
+export default function ContentModal({title, poster, overview, modal}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  console.log(img);
   return (
     <div>
       <Button onClick={handleOpen}>More Info?</Button>
@@ -46,7 +47,12 @@ export default function ContentModal({title, img, overview, modal}) {
             <Typography color='white' id="transition-modal-description" sx={{ mt: 2 }}>
               {overview}
             </Typography>
-            <Typography component="h6">Hello</Typography>
+            <img
+              src = {`${img_300}/${poster}`}
+              width = {325}
+              height = {432}
+              alt = {title}
+            />
           </Box>
         </Fade>
       </Modal>
