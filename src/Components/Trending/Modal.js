@@ -6,6 +6,7 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {img_300} from './config.js';
+import YoutubeTrailer from './YoutubeTrailer.js';
 
 const style = {
   position: 'absolute',
@@ -21,10 +22,11 @@ const style = {
   textAlign: 'justify',
 };
 
-export default function ContentModal({title, poster, overview, modal}) {
+export default function ContentModal({id, title, media, poster, overview, modal}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   return (
     <div>
       <Button onClick={handleOpen}>More Info?</Button>
@@ -53,6 +55,7 @@ export default function ContentModal({title, poster, overview, modal}) {
               height = {432}
               alt = {title}
             />
+          <YoutubeTrailer id={id} media={media}/>
           </Box>
         </Fade>
       </Modal>

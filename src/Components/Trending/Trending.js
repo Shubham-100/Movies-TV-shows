@@ -8,7 +8,7 @@ export default function Trending({tdata}) {
       <div className='trending'>
         {
           tdata && tdata.map((movie)=>(
-          <MovieCard key={movie.id} title={movie.name || movie.title} media={movie.media_type} date={movie.first_air_date || movie.release_date} vote={movie.vote_average} image={movie.poster_path} overview={movie.overview}/>
+          <MovieCard key = {movie.id} id={movie.id} title={movie.name || movie.title} media={movie.media_type} date={movie.first_air_date || movie.release_date} vote={movie.vote_average} image={movie.poster_path} overview={movie.overview}/>
           ))
         }
       </div>

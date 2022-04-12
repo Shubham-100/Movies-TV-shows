@@ -20,7 +20,6 @@ function App() {
     const api = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=2152a5d77cf288227bc1af054e424936&page=${page}`);
     const data = await api.json();
     setTrendingData(data.results);
-    console.log(data.results);
   };
 
   const changePage = (event, value) => {
@@ -43,7 +42,7 @@ function App() {
                 <Pagination count={20} page={page} color="secondary" variant="outlined"  size="medium" onChange={changePage} showFirstButton showLastButton showclassName="pagination" />
             </Stack>
         </div>
-        <div className='foot'><SimpleBottomNavigation/></div> 
+        <div className='foot'><SimpleBottomNavigation/></div>  
       </div>
       
     </React.Fragment>

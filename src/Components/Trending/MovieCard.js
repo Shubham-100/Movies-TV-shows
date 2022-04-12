@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Badge from '@mui/material/Badge';
 import ContentModal from './Modal.js';
 
-function MovieCard({title, media, date, vote, image, overview}) {
+function MovieCard({id, title, media, date, vote, image, overview, tag}) {
   
   const [modal, setModal] = useState(false);
 
@@ -17,7 +17,7 @@ function MovieCard({title, media, date, vote, image, overview}) {
   return (
       <React.Fragment>
 
-        { modal && <ContentModal title={title} poster={image} overview={overview} open={modal}/> }
+        { modal && <ContentModal id={id} title={title} media = {media} poster={image} overview={overview} open={modal}/> }
 
           <div className='content'>
             <img src={image ? `${img_300}/${image}` : unavailableLandscape} alt="" className="poster" onClick={toggleModal}/>
