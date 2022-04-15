@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function YoutubeTrailer({id, media}) {
 
@@ -12,10 +12,12 @@ export default function YoutubeTrailer({id, media}) {
     setLink(data.results[0]?.key);
   };
 
-  getYTLink();
+  useEffect(()=>{
+    getYTLink();
+  },);
 
   return (
-      <Button variant="outlined" startIcon={<YouTubeIcon/>} href={`https://www.youtube.com/watch?v=${link}`} target="_blank">
+      <Button variant="outlined"  startIcon={<YouTubeIcon/>} href={`https://www.youtube.com/watch?v=${link}`} target="_blank">
         See the trailer over YouTube
       </Button>
   );

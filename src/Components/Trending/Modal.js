@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {img_300} from './config.js';
 import YoutubeTrailer from './YoutubeTrailer.js';
+import Cast from './Cast.js';
 
 const style = {
   position: 'absolute',
@@ -56,6 +57,7 @@ export default function ContentModal({id, title, media, poster, overview, modal}
               alt = {title}
             />
           <YoutubeTrailer id={id} media={media}/>
+          <Cast/>
           </Box>
         </Fade>
       </Modal>
