@@ -28,18 +28,18 @@ const boxStyle = {
 export default function BasicTextFields() {
 
   const [content, setContent] = useState([]);
-  //const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("");
 
 
-  const search = async (searchText) => {
-     const api = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=2152a5d77cf288227bc1af054e424936&query=${searchText}&page=1`);
+  const search = async () => {
+     const api = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=2152a5d77cf288227bc1af054e424936&query=${query}&page=1`);
      const data = await api.json();
      setContent(data.results);
      console.log(data.results);
   };
 
   const handleChange = event => {
-    //setQuery(event.target.value);
+    setQuery(event.target.value);
     console.log(event.target.value);
   }
 
@@ -51,7 +51,7 @@ export default function BasicTextFields() {
       autoComplete="off"
     >
       <TextField sx={boxStyle} id="outlined-basic" label="Search Content..." variant="outlined" onChange={handleChange}/>
-      <Button variant="contained" endIcon={<SearchIcon fontSize="large"/>} onClick={(searchText) => search("spiderman")}>
+      <Button variant="contained" endIcon={<SearchIcon fontSize="large"/>} onClick={search}>
         Search
       </Button>
 
