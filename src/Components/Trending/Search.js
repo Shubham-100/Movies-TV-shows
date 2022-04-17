@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import {useState} from 'react';
+import MovieCard from './MovieCard.js';
 
 const style = {
   position: 'absolute',
@@ -50,9 +51,14 @@ export default function BasicTextFields() {
       autoComplete="off"
     >
       <TextField sx={boxStyle} id="outlined-basic" label="Search Content..." variant="outlined" onChange={handleChange}/>
-      <Button variant="contained" endIcon={<SearchIcon fontSize="large"/>} onClick={(searchText) => search(`${searchText}`)}>
+      <Button variant="contained" endIcon={<SearchIcon fontSize="large"/>} onClick={(searchText) => search("spiderman")}>
         Search
       </Button>
+
+      {
+          content && content.map((movie)=>(
+          <MovieCard key = {movie.id} id={movie.id} title={movie.name || movie.title} media={movie.media_type} date={movie.first_air_date || movie.release_date} vote={movie.vote_average} image={movie.poster_path} overview={movie.overview}/>))
+      }
     </Box>
   );
 }
