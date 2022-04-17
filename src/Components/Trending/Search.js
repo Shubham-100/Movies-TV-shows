@@ -28,7 +28,7 @@ const boxStyle = {
 export default function BasicTextFields() {
 
   const [content, setContent] = useState([]);
-  const [query, setQuery] = useState("");
+  //const [query, setQuery] = useState("");
 
 
   const search = async (searchText) => {
@@ -39,7 +39,7 @@ export default function BasicTextFields() {
   };
 
   const handleChange = event => {
-    setQuery(event.target.value);
+    //setQuery(event.target.value);
     console.log(event.target.value);
   }
 
