@@ -37,11 +37,20 @@ function App() {
              <Route path='/search' element={<Search/>}></Route>
             </Routes>
         </div>  
-        <div className='page'> 
+        
+        <div
+            style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: 0,
+             }}
+        >
             <Stack spacing={2}>
-                <Pagination count={20} page={page} color="secondary" variant="outlined"  size="medium" onChange={changePage} showFirstButton showLastButton showclassName="pagination" />
-            </Stack>0
+                <Pagination count={20} style={{alignSelf: 'center'}} page={page} color="secondary" variant="outlined"  size="medium" onChange={changePage} showFirstButton showLastButton showclassName="pagination" />
+            </Stack>            
         </div>
+        
         <div className='foot' style={{textAlign: 'center'}}><SimpleBottomNavigation/></div>  
       </div>
       

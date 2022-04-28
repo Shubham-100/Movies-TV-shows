@@ -10,6 +10,7 @@ export default function YoutubeTrailer({id, media}) {
     const api = await fetch(`https://api.themoviedb.org/3/${media}/${id}/videos?api_key=2152a5d77cf288227bc1af054e424936`);
     const data = await api.json();
     setLink(data.results[0]?.key);
+    console.log(data);
   };
 
   useEffect(()=>{
