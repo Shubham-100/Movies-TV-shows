@@ -8,7 +8,7 @@ import MovieCard from './MovieCard.js';
 
 const style = {
   position: 'absolute',
-  top: '50%',
+  top: '30%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '20%',
@@ -50,7 +50,12 @@ export default function BasicTextFields() {
       noValidate
       autoComplete="off"
     >
-      <TextField sx={boxStyle} id="outlined-basic" label="Search Content..." variant="outlined" onChange={handleChange}/>
+      <TextField sx={boxStyle} id="outlined-basic" label="Search Content..." variant="outlined" onChange={handleChange} onKeyPress={(ev) => {
+        if (ev.key === "Enter") {
+          ev.preventDefault();
+          search();
+        }
+      }}/>
       <Button variant="contained" endIcon={<SearchIcon fontSize="large"/>} onClick={search}>
         Search
       </Button>

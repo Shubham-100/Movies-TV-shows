@@ -23,7 +23,7 @@ const style = {
   textAlign: 'justify',
 };
 
-export default function ContentModal({id, title, media, poster, overview, modal}) {
+export default function ContentModal({id, title, media, poster, overview, modalOpen}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {img_300} from './config.js';
-import {unavailableLandscape} from './config.js';
+import {unavailable} from './config.js';
 import './MovieCard.css';
 import Stack from '@mui/material/Stack';
 import Badge from '@mui/material/Badge';
@@ -17,10 +17,10 @@ function MovieCard({id, title, media, date, vote, image, overview, tag}) {
   return (
       <React.Fragment>
 
-        { modal && <ContentModal id={id} title={title} media = {media} poster={image} overview={overview} open={modal}/> }
+        { modal && <ContentModal id={id} title={title} media = {media} poster={image} overview={overview} modalOpen={modal}/> }
 
           <div className='content'>
-            <img src={image ? `${img_300}/${image}` : unavailableLandscape} alt="" className="poster" onClick={toggleModal}/>
+            <img src={image ? `${img_300}/${image}` : unavailable} alt={title} className="poster" onClick={toggleModal}/>
             <b className='details'>{title}</b>
             <span className='details'>{date}</span>
             <br/>

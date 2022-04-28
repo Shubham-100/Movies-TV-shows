@@ -40,9 +40,9 @@ function App() {
         <div className='page'> 
             <Stack spacing={2}>
                 <Pagination count={20} page={page} color="secondary" variant="outlined"  size="medium" onChange={changePage} showFirstButton showLastButton showclassName="pagination" />
-            </Stack>
+            </Stack>0
         </div>
-        <div className='foot'><SimpleBottomNavigation/></div>  
+        <div className='foot' style={{textAlign: 'center'}}><SimpleBottomNavigation/></div>  
       </div>
       
     </React.Fragment>

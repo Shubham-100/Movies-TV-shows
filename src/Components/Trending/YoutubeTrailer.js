@@ -14,7 +14,7 @@ export default function YoutubeTrailer({id, media}) {
 
   useEffect(()=>{
     getYTLink();
-  },);
+  });
 
   return (
       <Button variant="outlined"  startIcon={<YouTubeIcon/>} href={`https://www.youtube.com/watch?v=${link}`} target="_blank">
