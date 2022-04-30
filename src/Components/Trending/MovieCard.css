@@ -6,8 +6,8 @@
     display: flex;
     border-radius: 20px;
     padding: 5px;
-    float: left;
-} 
+    float: right;
+}
 
 .poster:hover {
     cursor: pointer;
@@ -17,5 +17,4 @@
 .details {
    margin-left: 25px;
    text-align: left;
-   
 }

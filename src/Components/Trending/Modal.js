@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {img_300} from './config.js';
 import YoutubeTrailer from './YoutubeTrailer.js';
-import Cast from './Cast.js';
 
 const style = {
   position: 'absolute',
@@ -15,7 +14,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '75%',
-  height: '75%',
+  height: '70%',
   bgcolor: '#39445a',
   border: '2px solid #000',
   boxShadow: 48,
@@ -47,7 +46,7 @@ export default function ContentModal({id, title, media, poster, overview, modalO
             <Typography color='white' id="transition-modal-title" variant="h4" component="h1">
               {title}
             </Typography>
-            <Typography color='white' id="transition-modal-description" sx={{ mt: 2 }}>
+            <Typography color='white' id="transition-modal-description" sx={{ mt: 0}}>
               {overview}
             </Typography>
             <img
@@ -57,7 +56,6 @@ export default function ContentModal({id, title, media, poster, overview, modalO
               alt = {title}
             />
           <YoutubeTrailer id={id} media={media}/>
-          <Cast/>
           </Box>
         </Fade>
       </Modal>

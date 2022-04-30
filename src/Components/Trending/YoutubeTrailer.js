@@ -1,8 +1,17 @@
-import Button from '@mui/material/Button';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
+
+import YouTube from 'react-youtube';
 
 export default function YoutubeTrailer({id, media}) {
+
+  const options = {
+    height: '390',
+    width: '640',
+    playerVars: {
+      autoplay: 0,
+      controls: 1,
+    },
+  };
 
   const [link, setLink] = useState("");
 
@@ -18,8 +27,8 @@ export default function YoutubeTrailer({id, media}) {
   });
 
   return (
-      <Button variant="outlined"  startIcon={<YouTubeIcon/>} href={`https://www.youtube.com/watch?v=${link}`} target="_blank">
-        See the trailer over YouTube
-      </Button>
+    <React.Fragment>
+      <YouTube videoId={link} opts={options} style={{position: 'absolute', left: 400, top: 120}}/>
+    </React.Fragment>
   );
 }
